@@ -1,9 +1,9 @@
-import { AppBar, Toolbar, Button } from "@mui/material";
+import { AppBar, Toolbar, Button, Switch, Box } from "@mui/material";
 import { Link } from "react-router-dom";
 
-export default function Navbar() {
+export default function Navbar({ mode, toggleMode }) {
   return (
-    <AppBar position="static">
+    <AppBar position="sticky">
       <Toolbar>
         <Button color="inherit" component={Link} to="/">
           Home
@@ -14,6 +14,12 @@ export default function Navbar() {
         <Button color="inherit" component={Link} to="/projects">
           Projects
         </Button>
+				<Box sx={{ flexGrow: 1 }} />
+        <Switch
+          checked={mode === "dark"}
+          onChange={toggleMode}
+          slotProps={{ "aria-label": "dark mode toggle" }}
+        />
       </Toolbar>
     </AppBar>
 	)

@@ -9,7 +9,7 @@ import Footer from "./components/Footer.jsx"
 import Landing from "./pages/Landing.jsx";
 import About from "./pages/About.jsx";
 import { useMemo, useState } from 'react';
-// import ProjectsDashboard from "./pages/ProjectsDashboard";
+import ProjectsDashboard from "./pages/ProjectsDashboard";
 // import MemoryGame from "./projects/MemoryGame";
 
 function App() {
@@ -42,8 +42,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/about" element={<About />} />
-          {/* <Route path="/projects" element={<ProjectsDashboard />} />
-          <Route path="/projects/memory" element={<MemoryGame />} /> */}
+          <Route path="/projects" element={<ProjectsDashboard />} />
+          {/* <Route path="/projects/memory" element={<MemoryGame />} /> */}
         </Routes>
       <Footer />
       </ThemeProvider>

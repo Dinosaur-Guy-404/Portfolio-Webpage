@@ -8,12 +8,19 @@ import Navbar from "./components/Navbar.jsx";
 import Footer from "./components/Footer.jsx"
 import Landing from "./pages/Landing.jsx";
 import About from "./pages/About.jsx";
-import { useMemo, useState } from 'react';
+import { useMemo, useState, useEffect } from 'react';
 import ProjectsDashboard from "./pages/ProjectsDashboard";
+import TicTacToe from "./projects/TicTacToe.jsx";
 // import MemoryGame from "./projects/MemoryGame";
 
 function App() {
-  const [mode, setMode] = useState("light");
+  const [mode, setMode] = useState(() => {
+    return localStorage.getItem("themeMode") || "light";
+  });
+  
+  useEffect(() => {
+    localStorage.setItem("themeMode", mode);
+  }, [mode]);
 
   const toggleMode = () => {
     setMode((prev) => (prev === "light" ? "dark" : "light"));
@@ -43,6 +50,7 @@ function App() {
           <Route path="/" element={<Landing />} />
           <Route path="/about" element={<About />} />
           <Route path="/projects" element={<ProjectsDashboard />} />
+          <Route path="/projects/tictactoe" element={<TicTacToe />} />
           {/* <Route path="/projects/memory" element={<MemoryGame />} /> */}
         </Routes>
       <Footer />

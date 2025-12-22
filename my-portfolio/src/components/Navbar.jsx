@@ -28,7 +28,7 @@ export default function Navbar({ mode, toggleMode }) {
         </Button>
 				<Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
 					<MenuItem component={Link} to="/projects/tictactoe" onClick={handleClose}>
-						Mini Games
+						TicTacToe
 					</MenuItem>
 				</Menu>
 				<Box sx={{ flexGrow: 1 }} />

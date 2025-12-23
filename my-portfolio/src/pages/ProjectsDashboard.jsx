@@ -1,17 +1,28 @@
 import { Box, Typography } from "@mui/material";
+import { Card, CardActionArea, CardMedia } from "@mui/material";
+import { Link } from "react-router-dom";
+import TicTacToe from "../assets/tictactoe_image.png";
 
 export default function ProjectsDashboard() {
 	return (
-		<Box sx={{ p: 4 }}>
-			<Typography variant="h3" gutterBottom>
-				Hi, this is the project dashboard,
-				all of my projects will be listed here.
-				For now, please try my mini games under the
-				projects tab
-			</Typography>
-			<Typography variant="h6">
-				To be updated...
-			</Typography>
-		</Box>
+	<Box ml={4}>
+		<Card sx={{ width: 150 }}>
+			<CardActionArea component={Link} to="/projects/tictactoe">
+				<CardMedia
+					component="img"
+					height="150"
+					image={TicTacToe}	
+					alt="Tic Tac Toe"
+				/>
+			</CardActionArea>
+					<Typography
+						variant="subtitle1"
+						align="center"
+						sx={{ mt: 1, fontWeight: 500 }}
+					>
+						Tic Tac Toe
+					</Typography>
+		</Card>
+	</Box>
 	)
 }

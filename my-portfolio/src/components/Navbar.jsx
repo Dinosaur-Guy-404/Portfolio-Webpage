@@ -26,11 +26,6 @@ export default function Navbar({ mode, toggleMode }) {
         <Button color="inherit" onClick={handleClick} component={Link} to="/projects">
           Projects
         </Button>
-				<Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
-					<MenuItem component={Link} to="/projects/tictactoe" onClick={handleClose}>
-						TicTacToe
-					</MenuItem>
-				</Menu>
 				<Box sx={{ flexGrow: 1 }} />
         <Switch
           checked={mode === "dark"}

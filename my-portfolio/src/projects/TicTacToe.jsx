@@ -68,7 +68,6 @@ export default function TicTacToe() {
   );
 }
 
-// Check winner function
 function checkWinner(board) {
   const winningLines = [
     [0, 1, 2],
